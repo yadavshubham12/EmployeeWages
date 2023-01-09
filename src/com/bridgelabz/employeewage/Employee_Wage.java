@@ -17,6 +17,7 @@ public class Employee_Wage {
     }
     public static void main(String[] args) {
         System.out.println("Welcome to the Employee Wage");
+        int empCheck = (int) Math.floor(Math.random() * 10) % 3;
         Employee_Wage empWageBuilderOOPS = new Employee_Wage();
         empWageBuilderOOPS.computeWage("AMAZON", 20, 20, 100);
         empWageBuilderOOPS.computeWage("FLIPKART", 20, 20, 100);
@@ -30,9 +31,9 @@ public class Employee_Wage {
         int totalEmpWage = 0;
         while (totalEmpHrs <= maximumHrsMonth && totalWorkingDays < numOfWorkingDays) {
             totalWorkingDays++;
+            totalEmpWage = empWagePerHr * totalEmpHrs;
         }
-        System.out.println("TOtal employee Wage of empl in " + company + "is" + totalEmpWage);
-
+        System.out.println("Total employee Wage for company " + company + " is: " + totalEmpWage);
     }
 
 }
